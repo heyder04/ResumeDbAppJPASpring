@@ -5,8 +5,6 @@
 package com.company.dao.impl;
 
 import com.company.entity.User;
-import com.company.dao.inter.AbstractDAO;
-import com.company.dao.inter.UserDaoInter;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
@@ -24,7 +22,7 @@ import java.util.List;
  */
 @Repository("userDao1")
 @Transactional
-public class UserDaoImpl  implements UserDaoInter{
+public class UserRepositoryCustomImpl implements UserRepositoryCustom {
 //Data Access Object
  @PersistenceContext
     EntityManager em;

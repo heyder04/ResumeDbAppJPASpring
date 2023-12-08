@@ -1,15 +1,12 @@
 package com.company;
 
-import com.company.dao.inter.UserDaoInter;
-import com.company.dao.inter.UserRepository;
+import com.company.dao.impl.UserRepository;
 import com.company.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.data.domain.Sort;
 
 import java.util.List;
 
@@ -53,7 +50,8 @@ public CommandLineRunner run(){
 //			System.out.println(u);
 //			User u2=userRepository.findByNameAndSurname("test2","test2");
 //			System.out.println(u2);
-
+			List<User> u=userRepository.getAll(null,null,null);
+			System.out.println(u);
 		}
 	};
 	return  clr;

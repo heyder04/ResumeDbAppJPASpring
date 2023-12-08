@@ -4,19 +4,12 @@
  */
 package com.company.service.impl;
 
-import com.company.dao.inter.UserDaoInter;
+import com.company.dao.impl.UserRepositoryCustom;
 import com.company.entity.User;
 import com.company.service.inter.UserServiceInter;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
-import jakarta.persistence.Query;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.persistence.criteria.Root;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -31,7 +24,7 @@ public class UserServiceImpl implements UserServiceInter {
 //Data Access Object
  @Autowired
  @Qualifier("userDao1")
-    private UserDaoInter userDao;
+    private UserRepositoryCustom userDao;
 
     @Override
     public List<User> getAll(String name,String surname,Integer nationalityId) {
